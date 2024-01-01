@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>32</string>
+					<string>39</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>31</string>
+					<string>38</string>
 					<key>Timestamp</key>
-					<string>725800944.515831</string>
+					<string>725810900.358667</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -37,14 +37,52 @@
 				<string>        }
 </string>
 				<key>leading</key>
-				<string>                .disabled(!isFormValid)
-            }
+				<string>            }
+            Text(errorMessage)
 </string>
 				<key>trailing</key>
 				<string>    }
-    private func register() async {
-    }
+    private func register() async  {
+        errorMessage = ""
 </string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>StockApp/Screens/RegistrationScreen.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>StockApp/Screens/RegistrationScreen.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
 			</dict>
 			<key>type</key>
 			<string>bookmark</string>

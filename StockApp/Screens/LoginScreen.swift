@@ -1,35 +1,33 @@
 //
-//  RegistrationScreen.swift
+//  LoginScreen.swift
 //  StockApp
 //
-//  Created by Jacek Kosinski U on 31/12/2023.
+//  Created by Jacek Kosinski U on 01/01/2024.
 //
 
 import SwiftUI
 
-struct RegistrationScreen: View {
-
+struct LoginScreen: View {
     @EnvironmentObject private var model: StockModel
-    
+
     @State private var username: String = ""
     @State private var password: String = ""
 
     @State private var errorMessage: String = ""
 
- //   private let httpClient = HTTPClient()
-
     private var isFormValid: Bool {
-        !username.isEmptyOrWhiteSpace && !password.isEmptyOrWhiteSpace && password.count >= 6 && password.count <= 10
+        !username.isEmptyOrWhiteSpace && !password.isEmptyOrWhiteSpace
     }
+
     var body: some View {
         Form {
             TextField("Username", text: $username)
                 .textInputAutocapitalization(.never)
             SecureField("Password", text: $password)
             HStack {
-                Button("Register") {
+                Button("Login") {
                     Task {
-                        await register()
+                        await login()
                     }
                 }
                 .buttonStyle(.borderless)
@@ -38,10 +36,11 @@ struct RegistrationScreen: View {
             Text(errorMessage)
         }
     }
-    private func register() async  {
-        errorMessage = ""
+
+    func login() async {
         do {
-            let response = try await model.register(username: username, password: password)
+            let response = try await model.login(username: username, password: password)
+
             if response.error == false {
 
                 // take user to login screen
@@ -52,14 +51,11 @@ struct RegistrationScreen: View {
             errorMessage = error.localizedDescription
         }
     }
-
-//    private func register() async {
-//        let resource = Resource(url: <#T##URL#>, method: <#T##HTTPMethod#>, modelType: <#T##_.Type#>)
-//        httpClient.load(resource)
-//    }
 }
 
 #Preview {
-    RegistrationScreen()
-        .environmentObject(StockModel())
+    NavigationStack {
+        LoginScreen()
+            .environmentObject(StockModel())
+    }
 }
