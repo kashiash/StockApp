@@ -11,6 +11,12 @@
 		767C54632B42196000535CA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54622B42196000535CA6 /* ContentView.swift */; };
 		767C54652B42196200535CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767C54642B42196200535CA6 /* Assets.xcassets */; };
 		767C54692B42196200535CA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767C54682B42196200535CA6 /* Preview Assets.xcassets */; };
+		767C54712B421AF100535CA6 /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54702B421AF100535CA6 /* RegistrationScreen.swift */; };
+		767C54742B421F8400535CA6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54732B421F8400535CA6 /* String+Extensions.swift */; };
+		767C54772B42B41700535CA6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54762B42B41700535CA6 /* HTTPClient.swift */; };
+		767C547A2B42D83000535CA6 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54792B42D83000535CA6 /* StockModel.swift */; };
+		767C547C2B42D91300535CA6 /* RegisterResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C547B2B42D91300535CA6 /* RegisterResponseDTO.swift */; };
+		767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C547E2B42DA8D00535CA6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		767C54642B42196200535CA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		767C54662B42196200535CA6 /* StockApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockApp.entitlements; sourceTree = "<group>"; };
 		767C54682B42196200535CA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		767C54702B421AF100535CA6 /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
+		767C54732B421F8400535CA6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		767C54762B42B41700535CA6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		767C54792B42D83000535CA6 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		767C547B2B42D91300535CA6 /* RegisterResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseDTO.swift; sourceTree = "<group>"; };
+		767C547E2B42DA8D00535CA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,11 @@
 		767C545F2B42196000535CA6 /* StockApp */ = {
 			isa = PBXGroup;
 			children = (
+				767C547D2B42DA7A00535CA6 /* Utils */,
+				767C54782B42D82100535CA6 /* Models */,
+				767C54752B42B38B00535CA6 /* Network */,
+				767C54722B421F4900535CA6 /* Extensions */,
+				767C546F2B421ADB00535CA6 /* Screens */,
 				767C54602B42196000535CA6 /* StockAppApp.swift */,
 				767C54622B42196000535CA6 /* ContentView.swift */,
 				767C54642B42196200535CA6 /* Assets.xcassets */,
@@ -67,6 +84,47 @@
 				767C54682B42196200535CA6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		767C546F2B421ADB00535CA6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				767C54702B421AF100535CA6 /* RegistrationScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		767C54722B421F4900535CA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				767C54732B421F8400535CA6 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		767C54752B42B38B00535CA6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				767C54762B42B41700535CA6 /* HTTPClient.swift */,
+				767C547B2B42D91300535CA6 /* RegisterResponseDTO.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		767C54782B42D82100535CA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				767C54792B42D83000535CA6 /* StockModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		767C547D2B42DA7A00535CA6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				767C547E2B42DA8D00535CA6 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767C54742B421F8400535CA6 /* String+Extensions.swift in Sources */,
+				767C54772B42B41700535CA6 /* HTTPClient.swift in Sources */,
+				767C547A2B42D83000535CA6 /* StockModel.swift in Sources */,
+				767C54712B421AF100535CA6 /* RegistrationScreen.swift in Sources */,
 				767C54632B42196000535CA6 /* ContentView.swift in Sources */,
 				767C54612B42196000535CA6 /* StockAppApp.swift in Sources */,
+				767C547C2B42D91300535CA6 /* RegisterResponseDTO.swift in Sources */,
+				767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
