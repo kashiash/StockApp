@@ -28,7 +28,7 @@ class StockModel: ObservableObject {
             //save token to userdefaults
             let defaults = UserDefaults.standard
             defaults.set(response.token, forKey: "authToken")
-            defaults.set(response.userId, forKey: "userId")
+            defaults.set(response.userId?.uuidString, forKey: "userId")
         }
 
         return response

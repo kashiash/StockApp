@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>39</string>
+					<string>45</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>38</string>
+					<string>44</string>
 					<key>Timestamp</key>
-					<string>725810900.358667</string>
+					<string>725825459.40693</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -35,6 +35,8 @@
 			<dict>
 				<key>focused</key>
 				<string>        }
+        .navigationTitle("Register User")
+        .navigationBarTitleDisplayMode(.inline)
 </string>
 				<key>leading</key>
 				<string>            }

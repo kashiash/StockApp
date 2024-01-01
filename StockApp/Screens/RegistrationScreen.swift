@@ -10,7 +10,8 @@ import SwiftUI
 struct RegistrationScreen: View {
 
     @EnvironmentObject private var model: StockModel
-    
+    @EnvironmentObject private var appState: AppState
+
     @State private var username: String = ""
     @State private var password: String = ""
 
@@ -34,9 +35,16 @@ struct RegistrationScreen: View {
                 }
                 .buttonStyle(.borderless)
                 .disabled(!isFormValid)
+                Spacer()
+                Button("Login") {
+                    appState.routes.append(.login)
+                }
+                .buttonStyle(.borderless)
             }
             Text(errorMessage)
         }
+        .navigationTitle("Register User")
+        .navigationBarTitleDisplayMode(.inline)
     }
     private func register() async  {
         errorMessage = ""
@@ -45,6 +53,7 @@ struct RegistrationScreen: View {
             if response.error == false {
 
                 // take user to login screen
+                appState.routes.append(.login)
             } else {
                 errorMessage = response.reason ?? ""
             }
@@ -59,7 +68,29 @@ struct RegistrationScreen: View {
 //    }
 }
 
-#Preview {
-    RegistrationScreen()
+struct RegistrationScreenContainer: View {
+    @StateObject private var model = StockModel()
+    @StateObject private var appState = AppState()
+    
+    var body : some View {
+        NavigationStack(path: $appState.routes) {
+            RegistrationScreen()
+                .navigationDestination(for: Route.self) { route in
+                    switch route {
+                    case .register:
+                        RegistrationScreen()
+                    case .login:
+                        LoginScreen()
+                    case .stockCategoryList:
+                        Text("Stock category list will be here")
+                    }
+                }
+        }
         .environmentObject(StockModel())
+        .environmentObject(AppState())
+    }
+}
+
+#Preview {
+    RegistrationScreenContainer()
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     @EnvironmentObject private var model: StockModel
+    @EnvironmentObject private var appState: AppState
 
     @State private var username: String = ""
     @State private var password: String = ""
@@ -34,7 +35,10 @@ struct LoginScreen: View {
                 .disabled(!isFormValid)
             }
             Text(errorMessage)
+            
         }
+        .navigationTitle("Login User")
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     func login() async {
@@ -43,7 +47,8 @@ struct LoginScreen: View {
 
             if response.error == false {
 
-                // take user to login screen
+                // take user to category screen
+                appState.routes.append(.stockCategoryList)
             } else {
                 errorMessage = response.reason ?? ""
             }
@@ -57,5 +62,6 @@ struct LoginScreen: View {
     NavigationStack {
         LoginScreen()
             .environmentObject(StockModel())
+            .environmentObject(AppState())
     }
 }
