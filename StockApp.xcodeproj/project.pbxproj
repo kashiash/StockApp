@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		763EEE282B42FEF30079C504 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EEE272B42FEF30079C504 /* LoginScreen.swift */; };
-		763EEE2A2B4306900079C504 /* LoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EEE292B4306900079C504 /* LoginResponseDTO.swift */; };
 		763EEE2C2B430E530079C504 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EEE2B2B430E530079C504 /* AppState.swift */; };
+		763EEE2F2B435CAD0079C504 /* StockSharedDTOs in Frameworks */ = {isa = PBXBuildFile; productRef = 763EEE2E2B435CAD0079C504 /* StockSharedDTOs */; };
+		763EEE312B449E300079C504 /* AddStockCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EEE302B449E300079C504 /* AddStockCategoryScreen.swift */; };
+		763EEE342B44AF100079C504 /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EEE332B44AF100079C504 /* ColorSelector.swift */; };
+		763EEE362B44B1A80079C504 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EEE352B44B1A80079C504 /* Color+Extensions.swift */; };
 		767C54612B42196000535CA6 /* StockAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54602B42196000535CA6 /* StockAppApp.swift */; };
 		767C54632B42196000535CA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54622B42196000535CA6 /* ContentView.swift */; };
 		767C54652B42196200535CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767C54642B42196200535CA6 /* Assets.xcassets */; };
@@ -18,14 +21,15 @@
 		767C54742B421F8400535CA6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54732B421F8400535CA6 /* String+Extensions.swift */; };
 		767C54772B42B41700535CA6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54762B42B41700535CA6 /* HTTPClient.swift */; };
 		767C547A2B42D83000535CA6 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C54792B42D83000535CA6 /* StockModel.swift */; };
-		767C547C2B42D91300535CA6 /* RegisterResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C547B2B42D91300535CA6 /* RegisterResponseDTO.swift */; };
 		767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C547E2B42DA8D00535CA6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		763EEE272B42FEF30079C504 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		763EEE292B4306900079C504 /* LoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDTO.swift; sourceTree = "<group>"; };
 		763EEE2B2B430E530079C504 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		763EEE302B449E300079C504 /* AddStockCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockCategoryScreen.swift; sourceTree = "<group>"; };
+		763EEE332B44AF100079C504 /* ColorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
+		763EEE352B44B1A80079C504 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		767C545D2B42196000535CA6 /* StockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		767C54602B42196000535CA6 /* StockAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppApp.swift; sourceTree = "<group>"; };
 		767C54622B42196000535CA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,7 +40,6 @@
 		767C54732B421F8400535CA6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		767C54762B42B41700535CA6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		767C54792B42D83000535CA6 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
-		767C547B2B42D91300535CA6 /* RegisterResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseDTO.swift; sourceTree = "<group>"; };
 		767C547E2B42DA8D00535CA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,12 +48,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763EEE2F2B435CAD0079C504 /* StockSharedDTOs in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		763EEE322B44AEF80079C504 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				763EEE332B44AF100079C504 /* ColorSelector.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		767C54542B42196000535CA6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +82,7 @@
 		767C545F2B42196000535CA6 /* StockApp */ = {
 			isa = PBXGroup;
 			children = (
+				763EEE322B44AEF80079C504 /* Views */,
 				767C547D2B42DA7A00535CA6 /* Utils */,
 				767C54782B42D82100535CA6 /* Models */,
 				767C54752B42B38B00535CA6 /* Network */,
@@ -97,6 +110,7 @@
 			children = (
 				767C54702B421AF100535CA6 /* RegistrationScreen.swift */,
 				763EEE272B42FEF30079C504 /* LoginScreen.swift */,
+				763EEE302B449E300079C504 /* AddStockCategoryScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -105,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				767C54732B421F8400535CA6 /* String+Extensions.swift */,
+				763EEE352B44B1A80079C504 /* Color+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -113,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				767C54762B42B41700535CA6 /* HTTPClient.swift */,
-				767C547B2B42D91300535CA6 /* RegisterResponseDTO.swift */,
-				763EEE292B4306900079C504 /* LoginResponseDTO.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -152,6 +165,9 @@
 			dependencies = (
 			);
 			name = StockApp;
+			packageProductDependencies = (
+				763EEE2E2B435CAD0079C504 /* StockSharedDTOs */,
+			);
 			productName = StockApp;
 			productReference = 767C545D2B42196000535CA6 /* StockApp.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 767C54542B42196000535CA6;
+			packageReferences = (
+				763EEE2D2B435CAD0079C504 /* XCRemoteSwiftPackageReference "StockSharedDTOs" */,
+			);
 			productRefGroup = 767C545E2B42196000535CA6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,15 +226,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				767C54742B421F8400535CA6 /* String+Extensions.swift in Sources */,
+				763EEE362B44B1A80079C504 /* Color+Extensions.swift in Sources */,
 				767C54772B42B41700535CA6 /* HTTPClient.swift in Sources */,
 				763EEE282B42FEF30079C504 /* LoginScreen.swift in Sources */,
 				767C547A2B42D83000535CA6 /* StockModel.swift in Sources */,
 				767C54712B421AF100535CA6 /* RegistrationScreen.swift in Sources */,
 				767C54632B42196000535CA6 /* ContentView.swift in Sources */,
+				763EEE312B449E300079C504 /* AddStockCategoryScreen.swift in Sources */,
 				763EEE2C2B430E530079C504 /* AppState.swift in Sources */,
-				763EEE2A2B4306900079C504 /* LoginResponseDTO.swift in Sources */,
 				767C54612B42196000535CA6 /* StockAppApp.swift in Sources */,
-				767C547C2B42D91300535CA6 /* RegisterResponseDTO.swift in Sources */,
+				763EEE342B44AF100079C504 /* ColorSelector.swift in Sources */,
 				767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +455,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		763EEE2D2B435CAD0079C504 /* XCRemoteSwiftPackageReference "StockSharedDTOs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kashiash/StockSharedDTOs.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		763EEE2E2B435CAD0079C504 /* StockSharedDTOs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 763EEE2D2B435CAD0079C504 /* XCRemoteSwiftPackageReference "StockSharedDTOs" */;
+			productName = StockSharedDTOs;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 767C54552B42196000535CA6 /* Project object */;
 }

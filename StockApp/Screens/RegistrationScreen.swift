@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StockSharedDTOs
 
 struct RegistrationScreen: View {
 

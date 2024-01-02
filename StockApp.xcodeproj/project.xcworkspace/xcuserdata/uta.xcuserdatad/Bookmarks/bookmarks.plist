@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>45</string>
+					<string>46</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>44</string>
+					<string>45</string>
 					<key>Timestamp</key>
-					<string>725825459.40693</string>
+					<string>725834978.594798</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -35,17 +35,15 @@
 			<dict>
 				<key>focused</key>
 				<string>        }
-        .navigationTitle("Register User")
-        .navigationBarTitleDisplayMode(.inline)
 </string>
 				<key>leading</key>
 				<string>            }
             Text(errorMessage)
 </string>
 				<key>trailing</key>
-				<string>    }
-    private func register() async  {
-        errorMessage = ""
+				<string>        .navigationTitle("Register User")
+        .navigationBarTitleDisplayMode(.inline)
+    }
 </string>
 			</dict>
 			<key>type</key>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import StockSharedDTOs
 
 class StockModel: ObservableObject {
 
