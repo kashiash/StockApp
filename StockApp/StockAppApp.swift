@@ -25,7 +25,7 @@ struct StockAppApp: App {
                         case .login:
                             LoginScreen()
                         case .stockCategoryList:
-                            Text("Stock category list will be here")
+                            AddStockCategoryScreen()
                         }
                     }
             }

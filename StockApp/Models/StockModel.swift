@@ -10,18 +10,25 @@ import StockSharedDTOs
 
 class StockModel: ObservableObject {
 
+    @Published var stockCategories: [StockCategoryResponseDTO] = []
+
     let httpClient = HTTPClient()
     func register(username: String, password: String) async throws -> RegisterResponseDTO {
 
         let registerData = ["username":username, "password":password]
-        let resource = try Resource(url: Constants.Urls.register, method: .post(JSONEncoder().encode(registerData)), modelType: RegisterResponseDTO.self)
+        let resource = try Resource(url: Constants.Urls.register,
+                                    method: .post(JSONEncoder().encode(registerData)),
+                                    modelType: RegisterResponseDTO.self)
+
         let response = try await httpClient.load(resource)
         return response
     }
 
     func login (username:String, password:String) async throws -> LoginResponseDTO {
-       let loginData = ["username":username, "password":password]
-        let resource = try Resource(url: Constants.Urls.login, method: .post(JSONEncoder().encode(loginData)), modelType: LoginResponseDTO.self)
+        let loginData = ["username":username, "password":password]
+        let resource = try Resource(url: Constants.Urls.login,
+                                    method: .post(JSONEncoder().encode(loginData)),
+                                    modelType: LoginResponseDTO.self)
 
         let response = try await httpClient.load(resource)
 
@@ -33,5 +40,36 @@ class StockModel: ObservableObject {
         }
 
         return response
+    }
+
+    func saveStockCategory(_ stockCategoryDTO: StockCategoryRequestDTO ) async throws {
+
+        guard     let userId = UserDefaults.standard.userId
+        else {
+            return
+        }
+
+        let resource = try Resource(url: Constants.Urls.saveStockCategoryBy(userId: userId),
+                                    method: .post(JSONEncoder().encode(stockCategoryDTO)),
+                                    modelType: StockCategoryResponseDTO.self)
+
+        let category = try await httpClient.load(resource)
+        stockCategories.append(category)
+
+    }
+
+    func getStockCategories() async throws {
+
+        guard let userId = UserDefaults.standard.userId else {
+            return
+        }
+        print("user: \(userId)")
+        let resource = Resource(url: Constants.Urls.getStockCategoriesBy(userId: userId),
+                                    modelType: [StockCategoryResponseDTO].self)
+
+        stockCategories = try await httpClient.load(resource)
+
+        print("items \(stockCategories.count)")
+
     }
 }

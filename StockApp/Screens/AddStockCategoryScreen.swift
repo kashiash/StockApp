@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import StockSharedDTOs
 
 struct AddStockCategoryScreen: View {
 
+    @EnvironmentObject private var model: StockModel
+    
     @State private var title: String = ""
     @State private var colorCode: String = "#F6DDCC"
 
     @Environment(\.dismiss) private var dismiss
+
 
     var body: some View {
         Form {
@@ -41,7 +45,13 @@ struct AddStockCategoryScreen: View {
         !title.isEmptyOrWhiteSpace
     }
     func saveStockcategory() async {
+        let categoryDTO = StockCategoryRequestDTO(title: title, colorCode: colorCode)
 
+        do {
+            try await model.saveStockCategory(categoryDTO)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
 }
@@ -49,5 +59,6 @@ struct AddStockCategoryScreen: View {
 #Preview {
     NavigationStack {
         AddStockCategoryScreen()
+            .environmentObject(StockModel())
     }
 }
