@@ -8,6 +8,7 @@
 import Foundation
 import StockSharedDTOs
 
+@MainActor
 class StockModel: ObservableObject {
 
     @Published var stockCategories: [StockCategoryResponseDTO] = []
@@ -55,6 +56,24 @@ class StockModel: ObservableObject {
 
         let category = try await httpClient.load(resource)
         stockCategories.append(category)
+
+    }
+
+    func deleteStockcategory(stockCategoryId: UUID) async throws {
+
+        guard     let userId = UserDefaults.standard.userId
+        else {
+            return
+        }
+
+
+        let resource = Resource(url: Constants.Urls.deleteStockCategoriesBy(userId: userId, categoryId: stockCategoryId),
+                                    method: .delete,
+                                    modelType: StockCategoryResponseDTO.self)
+
+        let category = try await httpClient.load(resource)
+
+        stockCategories = stockCategories.filter {$0.id != category.id}
 
     }
 
