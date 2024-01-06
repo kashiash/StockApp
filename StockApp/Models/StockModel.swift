@@ -12,6 +12,8 @@ import StockSharedDTOs
 class StockModel: ObservableObject {
 
     @Published var stockCategories: [StockCategoryResponseDTO] = []
+    @Published var stockCategory: StockCategoryResponseDTO?
+    @Published var stockItems: [StockItemResponseDTO] = []
 
     let httpClient = HTTPClient()
     func register(username: String, password: String) async throws -> RegisterResponseDTO {
@@ -90,5 +92,18 @@ class StockModel: ObservableObject {
 
         print("items \(stockCategories.count)")
 
+    }
+
+    func saveStockItem(_ stockItemDTO: StockItemRequestDTO ) async throws {
+        guard let userId = UserDefaults.standard.userId else {
+            return
+        }
+
+        let resource = try Resource(url: Constants.Urls.saveStockItem(userId: userId, categoryId: <#T##UUID#>),
+                                    method: .post(JSONEncoder().encode(stockItemDTO)),
+                                    modelType: StockItemResponseDTO.self)
+
+        let category = try await httpClient.load(resource)
+        stockItems.append(category)
     }
 }

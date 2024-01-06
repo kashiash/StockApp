@@ -10,28 +10,56 @@ import SwiftUI
 struct StockCategoryListScreen: View {
 
     @EnvironmentObject private var model: StockModel
+
+
+    @State var isNewCategoryViewPresented = false
     var body: some View {
-        NavigationStack{
-            List {
-                ForEach (model.stockCategories) { category in
-                    HStack{
-                        Circle()
-                            .fill(Color.fromHex(category.colorCode))
-                            .frame(width:25,height: 25)
-                        Text(category.title)
-                        //.foregroundColor(Color.fromHex(category.colorCode))
+        ZStack {
+            if model.stockCategories.isEmpty {
+                Text("No categories found")
+            } else {
+                
+                List {
+                    ForEach (model.stockCategories) { category in
+                        HStack{
+                            Circle()
+                                .fill(Color.fromHex(category.colorCode))
+                                .frame(width:25,height: 25)
+                            Text(category.title)
+                            //.foregroundColor(Color.fromHex(category.colorCode))
+                        }
                     }
+                    .onDelete(perform: deleteStockCategory)
                 }
-                .onDelete(perform: deleteStockCategory)
             }
-            .task {
-                await fetchStockCategories()
-            }
+        }
+        .task {
+            await fetchStockCategories()
+
 
         }
         .navigationTitle("Categories")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem (placement: .navigationBarLeading){
+                Button("Logout") {
+
+                }
+            }
+            ToolbarItem (placement: .navigationBarTrailing){
+                Button("Add",systemImage: "plus") {
+                    isNewCategoryViewPresented.toggle()
+                }
+            }
+        }
+        .sheet(isPresented: $isNewCategoryViewPresented) {
+            NavigationStack{
+                AddStockCategoryScreen()
+            }
+        }
     }
+
+
 
     func fetchStockCategories () async {
         do {
@@ -56,6 +84,8 @@ struct StockCategoryListScreen: View {
 }
 
 #Preview {
-    StockCategoryListScreen()
-        .environmentObject(StockModel())
+    NavigationStack{
+        StockCategoryListScreen()
+            .environmentObject(StockModel())
+    }
 }

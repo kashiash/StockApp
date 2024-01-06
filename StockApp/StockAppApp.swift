@@ -17,7 +17,9 @@ struct StockAppApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $appState.routes){
-                RegistrationScreen()
+                Group{
+                    RegistrationScreen()
+                }
                     .navigationDestination(for: Route.self) { route in
                         switch route {
                         case .register:
@@ -25,7 +27,7 @@ struct StockAppApp: App {
                         case .login:
                             LoginScreen()
                         case .stockCategoryList:
-                            AddStockCategoryScreen()
+                            StockCategoryListScreen()
                         }
                     }
             }

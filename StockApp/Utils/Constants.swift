@@ -26,6 +26,11 @@ struct Constants {
         static func deleteStockCategoriesBy(userId: UUID,categoryId: UUID) -> URL {
             return URL(string: "\(baseUrlPath)/users/\(userId)/stock-categories/\(categoryId)")!
         }
+
+        static func saveStockItem(userId: UUID,categoryId: UUID) -> URL {
+            return URL(string: "\(baseUrlPath)/users/\(userId)/stock-categories/\(categoryId)/stock-items")!
+        }
+
     }
 }
 

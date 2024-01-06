@@ -49,6 +49,7 @@ struct AddStockCategoryScreen: View {
 
         do {
             try await model.saveStockCategory(categoryDTO)
+            dismiss()
         } catch {
             print(error.localizedDescription)
         }

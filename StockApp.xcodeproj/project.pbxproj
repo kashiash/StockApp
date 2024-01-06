@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76210A222B49B4B200650604 /* StockDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76210A212B49B4B200650604 /* StockDetailScreen.swift */; };
+		76210A242B49B70300650604 /* AddStockItemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76210A232B49B70300650604 /* AddStockItemScreen.swift */; };
 		7631F1BA2B46BFE30089CB1A /* StockCategoryListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631F1B92B46BFE30089CB1A /* StockCategoryListScreen.swift */; };
 		7631F1BC2B46C0780089CB1A /* StockCategoryResponseDto+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631F1BB2B46C0780089CB1A /* StockCategoryResponseDto+Extensions.swift */; };
 		763279512B45BAF30095A9B2 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763279502B45BAF30095A9B2 /* UserDefaultsExtensions.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76210A212B49B4B200650604 /* StockDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailScreen.swift; sourceTree = "<group>"; };
+		76210A232B49B70300650604 /* AddStockItemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockItemScreen.swift; sourceTree = "<group>"; };
 		7631F1B92B46BFE30089CB1A /* StockCategoryListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCategoryListScreen.swift; sourceTree = "<group>"; };
 		7631F1BB2B46C0780089CB1A /* StockCategoryResponseDto+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockCategoryResponseDto+Extensions.swift"; sourceTree = "<group>"; };
 		763279502B45BAF30095A9B2 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				763EEE272B42FEF30079C504 /* LoginScreen.swift */,
 				763EEE302B449E300079C504 /* AddStockCategoryScreen.swift */,
 				7631F1B92B46BFE30089CB1A /* StockCategoryListScreen.swift */,
+				76210A212B49B4B200650604 /* StockDetailScreen.swift */,
+				76210A232B49B70300650604 /* AddStockItemScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -243,12 +249,14 @@
 				767C547A2B42D83000535CA6 /* StockModel.swift in Sources */,
 				767C54712B421AF100535CA6 /* RegistrationScreen.swift in Sources */,
 				767C54632B42196000535CA6 /* ContentView.swift in Sources */,
+				76210A222B49B4B200650604 /* StockDetailScreen.swift in Sources */,
 				763279512B45BAF30095A9B2 /* UserDefaultsExtensions.swift in Sources */,
 				763EEE312B449E300079C504 /* AddStockCategoryScreen.swift in Sources */,
 				763EEE2C2B430E530079C504 /* AppState.swift in Sources */,
 				767C54612B42196000535CA6 /* StockAppApp.swift in Sources */,
 				763EEE342B44AF100079C504 /* ColorSelector.swift in Sources */,
 				767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */,
+				76210A242B49B70300650604 /* AddStockItemScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
