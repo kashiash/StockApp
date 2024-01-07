@@ -74,7 +74,7 @@ struct StockCategoryListScreen: View {
             let category = model.stockCategories[index]
             Task {
                 do {
-                    try await model.deleteStockcategory(stockCategoryId: category.id)
+                    try await model.deleteStockCategory(stockCategoryId: category.id)
                 } catch {
                     print(error.localizedDescription)
                 }

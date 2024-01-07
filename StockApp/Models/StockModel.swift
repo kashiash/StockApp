@@ -61,7 +61,22 @@ class StockModel: ObservableObject {
 
     }
 
-    func deleteStockcategory(stockCategoryId: UUID) async throws {
+    func deleteStockItem(stockCategoryId: UUID, stockItemId: UUID) async throws {
+        guard     let userId = UserDefaults.standard.userId
+        else {
+            return
+        }
+
+        let resource = Resource(url: Constants.Urls.deleteStockItem(userId: userId, categoryId: stockCategoryId,itemId: stockItemId),
+                                    method: .delete,
+                                    modelType: StockItemResponseDTO.self)
+
+        let item = try await httpClient.load(resource)
+
+        stockItems = stockItems.filter {$0.id != item.id}
+    }
+
+    func deleteStockCategory(stockCategoryId: UUID) async throws {
 
         guard     let userId = UserDefaults.standard.userId
         else {

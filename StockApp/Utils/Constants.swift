@@ -35,6 +35,9 @@ struct Constants {
             return URL(string: "\(baseUrlPath)/users/\(userId)/stock-categories/\(categoryId)/stock-items")!
         }
 
+        static func deleteStockItem(userId: UUID,categoryId: UUID,itemId: UUID) -> URL {
+            return URL(string: "\(baseUrlPath)/users/\(userId)/stock-categories/\(categoryId)/stock-items/\(itemId)")!
+        }
     }
 }
 

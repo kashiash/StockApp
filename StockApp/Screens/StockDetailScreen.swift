@@ -21,7 +21,7 @@ struct StockDetailScreen: View {
                 Text("No items found for \(stockCategory.title ) \(stockCategory.id)")
             } else {
                 VStack{
-                    StockItemListView(stockItems: model.stockItems)
+                    StockItemListView(stockItems: model.stockItems, onDelete: deleteStockItem)
                 }
             }
         }
@@ -45,7 +45,17 @@ struct StockDetailScreen: View {
             await populateStockItems()
         }
     }
-    
+
+    func deleteStockItem(stockItemId: UUID) {
+        Task {
+            do {
+                try await model.deleteStockItem(stockCategoryId: stockCategory.id ,stockItemId: stockItemId)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
     func populateStockItems() async {
         do {
             try await model.populateStockItemsBy(stockcategoryId: stockCategory.id)
