@@ -42,8 +42,8 @@
 </string>
 				<key>trailing</key>
 				<string>        .navigationTitle("Register User")
+        .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
-    }
 </string>
 			</dict>
 			<key>type</key>

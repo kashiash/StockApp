@@ -8,7 +8,9 @@
 import Foundation
 import StockSharedDTOs
 
-
+enum StockError: Error {
+    case login
+}
 enum Route: Hashable {
     case login
     case register
@@ -18,4 +20,5 @@ enum Route: Hashable {
 
 class AppState: ObservableObject {
     @Published var routes: [Route] = []
+    @Published var errorWrapper: ErrorWrapper? 
 }

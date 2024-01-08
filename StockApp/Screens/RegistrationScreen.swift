@@ -45,6 +45,7 @@ struct RegistrationScreen: View {
             Text(errorMessage)
         }
         .navigationTitle("Register User")
+        .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
     }
     private func register() async  {

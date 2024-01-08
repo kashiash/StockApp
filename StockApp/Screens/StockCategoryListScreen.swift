@@ -10,6 +10,7 @@ import SwiftUI
 struct StockCategoryListScreen: View {
 
     @EnvironmentObject private var model: StockModel
+    @EnvironmentObject private var appState: AppState
 
 
     @State var isNewCategoryViewPresented = false
@@ -39,11 +40,13 @@ struct StockCategoryListScreen: View {
             await fetchStockCategories()
         }
         .navigationTitle("Categories")
+        .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem (placement: .navigationBarLeading){
                 Button("Logout") {
-
+                    model.logout()
+                    appState.routes.append(.login)
                 }
             }
             ToolbarItem (placement: .navigationBarTrailing){

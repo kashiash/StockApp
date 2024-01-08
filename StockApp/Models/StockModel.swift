@@ -45,6 +45,12 @@ class StockModel: ObservableObject {
         return response
     }
 
+    func logout() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject( forKey: "authToken")
+        defaults.removeObject( forKey: "userId")
+    }
+
     func saveStockCategory(_ stockCategoryDTO: StockCategoryRequestDTO ) async throws {
 
         guard     let userId = UserDefaults.standard.userId

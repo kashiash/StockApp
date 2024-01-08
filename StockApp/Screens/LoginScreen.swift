@@ -33,12 +33,22 @@ struct LoginScreen: View {
                 }
                 .buttonStyle(.borderless)
                 .disabled(!isFormValid)
+                Spacer()
+                Button("Register") {
+                    appState.routes.append(.register)
+                }
             }
             Text(errorMessage)
-            
+
         }
         .navigationTitle("Login User")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
+        .sheet(item: $appState.errorWrapper) { errorWrapper in
+
+            ErrorView(errorWrapper: errorWrapper)
+                .presentationDetents([.medium])
+        }
     }
 
     func login() async {
@@ -50,10 +60,12 @@ struct LoginScreen: View {
                 // take user to category screen
                 appState.routes.append(.stockCategoryList)
             } else {
-                errorMessage = response.reason ?? ""
+                //errorMessage = response.reason ?? ""
+                appState.errorWrapper = ErrorWrapper(error: StockError.login, guidance: response.reason ?? "")
             }
         } catch {
-            errorMessage = error.localizedDescription
+            // errorMessage = error.localizedDescription
+            appState.errorWrapper = ErrorWrapper(error: error, guidance: error.localizedDescription)
         }
     }
 }
