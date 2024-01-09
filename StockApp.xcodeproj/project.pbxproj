@@ -31,6 +31,7 @@
 		767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C547E2B42DA8D00535CA6 /* Constants.swift */; };
 		7685B5062B4A0DAC008E44CA /* StockItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685B5052B4A0DAC008E44CA /* StockItemListView.swift */; };
 		7685B5082B4A0DF7008E44CA /* StockItemResponseDTO+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685B5072B4A0DF7008E44CA /* StockItemResponseDTO+Extensions.swift */; };
+		76E7F8962B4DBF9F006A364C /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E7F8952B4DBF9F006A364C /* Validations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		767C547E2B42DA8D00535CA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7685B5052B4A0DAC008E44CA /* StockItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemListView.swift; sourceTree = "<group>"; };
 		7685B5072B4A0DF7008E44CA /* StockItemResponseDTO+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockItemResponseDTO+Extensions.swift"; sourceTree = "<group>"; };
+		76E7F8952B4DBF9F006A364C /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				767C547E2B42DA8D00535CA6 /* Constants.swift */,
+				76E7F8952B4DBF9F006A364C /* Validations.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				767C54612B42196000535CA6 /* StockAppApp.swift in Sources */,
 				763EEE342B44AF100079C504 /* ColorSelector.swift in Sources */,
 				767C547F2B42DA8D00535CA6 /* Constants.swift in Sources */,
+				76E7F8962B4DBF9F006A364C /* Validations.swift in Sources */,
 				76210A242B49B70300650604 /* AddStockItemScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

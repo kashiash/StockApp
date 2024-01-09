@@ -62,8 +62,8 @@
             filePath = "StockApp/Screens/LoginScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "StockApp/Screens/LoginScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "login()"
             landmarkType = "7">
             <Locations>

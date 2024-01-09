@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>46</string>
+					<string>101</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>45</string>
+					<string>100</string>
 					<key>Timestamp</key>
-					<string>725834978.594798</string>
+					<string>726517225.756893</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -41,9 +41,9 @@
             Text(errorMessage)
 </string>
 				<key>trailing</key>
-				<string>        .navigationTitle("Register User")
+				<string>
         .navigationBarBackButtonHidden()
-        .navigationBarTitleDisplayMode(.inline)
+
 </string>
 			</dict>
 			<key>type</key>

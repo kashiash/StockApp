@@ -8,6 +8,11 @@
 import SwiftUI
 import StockSharedDTOs
 
+enum FocusedField {
+    case username
+    case password
+}
+
 struct RegistrationScreen: View {
 
     @EnvironmentObject private var model: StockModel
@@ -18,35 +23,85 @@ struct RegistrationScreen: View {
 
     @State private var errorMessage: String = ""
 
+    @FocusState private var focusedField: FocusedField?
+
  //   private let httpClient = HTTPClient()
 
     private var isFormValid: Bool {
         !username.isEmptyOrWhiteSpace && !password.isEmptyOrWhiteSpace && password.count >= 6 && password.count <= 10
     }
     var body: some View {
-        Form {
+        VStack {
+            Text("Register here")
+                .font(.system(size: 30,weight: .bold))
+                .foregroundColor(Color("PrimaryBlue"))
+                .padding(.bottom)
+
+            Text("Create new account so you can use the best app on World!")
+                .font(.system(size: 16,weight: .semibold))
+                .foregroundColor(.black)
+                .multilineTextAlignment(.center)
+                .padding(.bottom)
+
             TextField("Username", text: $username)
+                .focused($focusedField,equals: .username)
                 .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .padding()
+                .background(Color("SecondaryBlue"))
+                .cornerRadius(12)
+                .background(RoundedRectangle(cornerRadius: 12)
+                    .stroke(focusedField == .username ? Color(.blue) : .white, lineWidth: 3)
+                )
+                .padding(.horizontal)
             SecureField("Password", text: $password)
-            HStack {
-                Button("Register") {
+                .focused($focusedField,equals: .password)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .padding()
+                .background(Color("SecondaryBlue"))
+                .cornerRadius(12)
+                .background(RoundedRectangle(cornerRadius: 12)
+                    .stroke(focusedField == .password ? Color(.blue) : .white, lineWidth: 3)
+                )
+                .padding(.horizontal)
+            VStack {
+                Button {
                     Task {
                         await register()
                     }
+                } label: {
+                    Text("Register")
+                        .font(.system(size: 20,weight: .semibold))
+                        .foregroundColor(.white)
+
                 }
-                .buttonStyle(.borderless)
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
+                .background(Color("PrimaryBlue"))
+                .cornerRadius(12)
+                .padding()
                 .disabled(!isFormValid)
-                Spacer()
-                Button("Login") {
+             //   Spacer()
+                Button {
                     appState.routes.append(.login)
+                } label: {
+                    Text("Already have an account")
+                        .font(.system(size: 20,weight: .semibold))
+                        .foregroundColor(.gray)
                 }
                 .buttonStyle(.borderless)
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
+               // .background(Color("PrimaryBlue"))
+                .cornerRadius(12)
+                .padding()
             }
             Text(errorMessage)
         }
-        .navigationTitle("Register User")
+
         .navigationBarBackButtonHidden()
-        .navigationBarTitleDisplayMode(.inline)
+
     }
     private func register() async  {
         errorMessage = ""
